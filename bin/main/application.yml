@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+server:
+  port: 7001
+
+window:
+  cmd: D:\Projects\glyde-mall-develop\glyde\batch\batch.bat
+linux:
+  cmd: /apps/batch/scripts/batch.sh  
+
+---
+
+spring:
+  profiles: local
+
+
+
+---
+
+spring:
+  profiles: dev
+
+
+  
+---
+
+spring:
+  profiles: stg
+
+---
+
+spring:
+  profiles: prod
+
