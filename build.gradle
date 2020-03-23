@@ -1,28 +1,19 @@
-
-plugins {
-	id 'org.springframework.boot' version '2.2.1.RELEASE'
-	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-	id 'java'
-}
-
-sourceCompatibility = '1.8'
-
-repositories {
-	mavenCentral()
-}
-
-bootJar {
-    group = 'application'
-    mainClassName = 'com.glyde.mall.scheduler.BatchSchedulerStarter'
-}
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 dependencies {
+
+	compileOnly 'org.projectlombok:lombok:1.18.12'
+	annotationProcessor 'org.projectlombok:lombok:1.18.12'
+	
 	compile 'org.springframework.boot:spring-boot-starter:2.2.1.RELEASE'
 	compile 'org.springframework.boot:spring-boot-starter-web:2.2.1.RELEASE'
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa:2.2.1.RELEASE'
+	compile 'org.springframework.boot:spring-boot-starter-security:2.2.1.RELEASE'
 	compile 'org.apache.commons:commons-exec:1.3' //외부 shell실행용
 	runtime 'com.h2database:h2' //테스트용.실제사용시에는 사용하지 않는다.
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.2.1.RELEASE'
+	
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.2.1.RELEASE'
 }
-

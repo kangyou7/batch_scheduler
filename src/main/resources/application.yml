@@ -25,7 +25,12 @@ linux:
 spring:
   profiles: local
 
-
+job: >
+ com.glyde.mall.batch.job.sample.sampleJob
+ com.glyde.mall.batch.job.sample.sampleParameterJob
+ com.glyde.mall.batch.job.sample.sampleServiceItemJob
+ com.glyde.mall.batch.job.sample.sampleServiceListJob
+ com.glyde.mall.batch.job.sample.XAsampleJob
 
 ---
 
